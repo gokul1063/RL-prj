@@ -4,8 +4,9 @@
 # Env overrides: PORT=8000  PARTS=0-3  VIZ_WARMUP=48  VIZ_CONTAINERS=140
 set -euo pipefail
 cd "$(dirname "$0")/.."
+ROOT="$(pwd)"
 
-PY=".venv/bin/python"
+PY="$ROOT/.venv/bin/python"
 PORT="${PORT:-8000}"
 
 if [[ ! -x "$PY" ]]; then
