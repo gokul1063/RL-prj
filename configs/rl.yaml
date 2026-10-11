@@ -1,0 +1,14 @@
+# Reinforcement learning configuration for phase 2 (MaskablePPO).
+train:
+  total_timesteps: 50000
+  n_envs: 4
+  learning_rate: 0.0003
+  gamma: 0.99
+  batch_size: 128
+  n_steps: 512
+  ent_coef: 0.01
+  clip_range: 0.2
+  net_arch: [128, 128]
+  eval_episodes: 10
+  checkpoint_every: 10000
+  run_name: ppo_default

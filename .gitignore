@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# Virtualenv & large/generated artifacts (recreated by ./run.sh)
+.venv/
+runs/
+data/raw/
+data/processed/
+
+# Misc
+*.log
+.DS_Store

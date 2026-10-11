@@ -1,0 +1,29 @@
+seed: 0
+processed_dir: data/processed/default
+max_nodes: 12
+tick_seconds: 300.0
+episode_ticks: 72
+max_arrivals: 800
+reserve_ratio: 1.0
+max_wait_ticks: 18
+hold_max: 5
+max_steps_multiplier: 4
+failure:
+  beta: 0.5
+  base_scale: 1.0
+  recent_fail_weight: 0.3
+reward:
+  w_scheduled: 1.0
+  w_balance: 2.0
+  w_failure: 5.0
+  w_affinity: 0.5
+  w_wait: 0.02
+  w_frag: 0.3
+  w_hold: 0.1
+  w_drop: 1.0
+traffic:
+  enabled: true
+  mu_per_cpu: 20.0
+  mu_scale: 1.0
+  request_rate_scale: 4.0
+  sample_every: 25
