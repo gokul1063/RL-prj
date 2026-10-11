@@ -54,6 +54,20 @@ The dashboard can also run the trained policy live: point `RL_MODEL` at
 `runs/<run>/ppo_final.zip` (default `runs/ppo_big/ppo_final.zip`) and pick
 **RL (PPO)** / *Scenario: RL (PPO)*.
 
+## Full-stack visualization (`rlviz/`)
+
+A React + FastAPI app that live-visualizes the **real-data** environment:
+physical cluster nodes as halos, running containers as dots (red when failed),
+ingress traffic per node, the RL policy vs a static baseline, and a ⚡ failure
+injector. The backend streams `RealClusterEnv` frames (adapting `PlacementEnv`)
+over a WebSocket.
+
+```bash
+bash scripts/run_viz.sh        # or: ./run.sh viz   -> http://localhost:8000
+```
+
+See [`rlviz/README.md`](rlviz/README.md) for the UI↔real-data mapping and config.
+
 ## Interactive demo (professor demo)
 
 A Streamlit dashboard to visualize and drive the environment live: a queue of

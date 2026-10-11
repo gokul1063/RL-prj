@@ -1,0 +1,21 @@
+seed: 0
+processed_dir: data/processed/smoke
+max_nodes: 14
+tick_seconds: 300.0
+episode_ticks: 240
+max_arrivals: 2500
+reserve_ratio: 1.0
+max_wait_ticks: 15
+hold_max: 3
+max_steps_multiplier: 6
+failure:
+  beta: 0.5
+  base_scale: 1.0
+  recent_fail_weight: 0.3
+reward: {}
+traffic:
+  enabled: true
+  mu_per_cpu: 20.0
+  mu_scale: 1.0
+  request_rate_scale: 4.0
+  sample_every: 25

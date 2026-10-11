@@ -18,3 +18,8 @@ data/processed/
 # Unrelated / generated artifacts
 lab4_6.py
 results.json
+# rlviz UI build artifacts
+rlviz/frontend/node_modules/
+rlviz/frontend/dist/
+# Source bundle for the UI scaffold
+rl-cluster-viz.zip

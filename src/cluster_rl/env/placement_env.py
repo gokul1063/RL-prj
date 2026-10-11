@@ -272,6 +272,8 @@ class PlacementEnv(gym.Env):
     def _release_until(self, upto_tick: int) -> None:
         while self.heap and self.heap[0][0] <= upto_tick:
             finish_tick, iid = heapq.heappop(self.heap)
+            if iid not in self.running:
+                continue
             inst = self.running.pop(iid)
             self.cluster.release(inst.node, inst.cpu, inst.mem, iid, failed=inst.failed)
             if inst.failed:
@@ -387,6 +389,19 @@ class PlacementEnv(gym.Env):
             self.service_of,
             self.service_index,
         )
+
+    def fail_instances(self, iids: list[int]) -> int:
+        """Force-fail running containers (live-demo injection). Returns count."""
+        n = 0
+        for iid in iids:
+            inst = self.running.get(int(iid))
+            if inst is None or inst.failed:
+                continue
+            inst.failed = True
+            inst.finish_tick = self.current_tick + 1
+            heapq.heappush(self.heap, (inst.finish_tick, inst.idx))
+            n += 1
+        return n
 
     def _info(self) -> dict:
         return {

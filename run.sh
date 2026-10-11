@@ -10,6 +10,7 @@
 #   ./run.sh train-full     # 300k-step PPO using configs/rl_big.yaml
 #   ./run.sh eval           # compare latest model vs baselines
 #   ./run.sh ui             # Streamlit dashboard (http://localhost:PORT)
+#   ./run.sh viz            # full-stack React+FastAPI visualization (http://localhost:8000)
 #   ./run.sh tb             # TensorBoard (http://localhost:6006)
 #
 # Environment overrides: PARTS=0-3  CONFIG=configs/smoke.yaml  RL_CONFIG=configs/rl.yaml
@@ -137,6 +138,7 @@ case "${1:-all}" in
   train-full) cmd_train_full ;;
   eval) cmd_eval ;;
   ui) cmd_ui ;;
+  viz) bash scripts/run_viz.sh ;;
   tb) cmd_tb ;;
   help|-h|--help) usage ;;
   *) echo "unknown command: $1" >&2; echo; usage >&2; exit 1 ;;

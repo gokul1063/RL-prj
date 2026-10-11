@@ -1,0 +1,10 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+# Real-data environment (cluster_rl)
+pandas>=2.0
+pyarrow>=14
+gymnasium>=0.29
+pyyaml>=6.0
