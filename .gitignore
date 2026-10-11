@@ -23,3 +23,5 @@ rlviz/frontend/node_modules/
 rlviz/frontend/dist/
 # Source bundle for the UI scaffold
 rl-cluster-viz.zip
+# Personal study notes (excluded from version control)
+notes/
